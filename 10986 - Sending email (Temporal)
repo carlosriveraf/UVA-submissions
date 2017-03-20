@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const long long INF = ( 1LL << 60 );
+
+struct cmp {
+    bool operator() ( const pair<int, long long> &p1, const pair<int, long long> &p2) {
+        return p1.second > p2.second;
+    }
+};
+
+
+long long dijkstra( int S, int T, vector< pair<int, long long> > ady[], int n ){
+	
+	priority_queue< pair<int, long long> , vector< pair<int, long long> > , cmp> pq;
+	
+	vector<long long> dist( n + 5, INF );
+	vector<bool> visited( n + 5);
+	 
+	dist[S] = 0;
+	pq.push( make_pair( S, 0 ) );
+	
+	while( !pq.empty() ) {
+		pair<int, long long> front = pq.top(); pq.pop();
+		int u = front.first;
+		
+		for( int i = 0 ; i < int( ady[u].size() ) ; i++ ) {
+			int v = ady[u][i].first;
+			long long d = ady[u][i].second;
+			
+			if( !visited[v] && dist[u] + d < dist[v] ) {
+				dist[v] = dist[u] + d;
+				pq.push( make_pair( v, dist[v] ) );
+			}			
+		}
+		
+		visited[u] = 1;
+		
+	}
+	
+	return dist[T];
+	
+}
+
+
+int main(){
+	int num_test; cin>>num_test;
+	
+	int i=1;
+	
+	while(num_test--){
+		int n, m, S, T;
+		cin>>n>>m>>S>>T;
+		
+		vector< pair<int, long long> > ady[n+5];
+		
+		while(m--){
+			int x, y, w;
+			cin>>x>>y>>w;
+			ady[x].push_back( make_pair( y, w ) );
+			ady[y].push_back( make_pair( x, w ) );
+		}
+		
+		long long ans = dijkstra ( S, T, ady, n);
+		
+		cout<<"Case #"<<i<<": ";
+		
+		if( ans>=INF ) { cout<<"unreachable\n"; }
+		else{ cout<<ans<<endl; }
+		i++;
+	}
+	
+	return 0;
+}

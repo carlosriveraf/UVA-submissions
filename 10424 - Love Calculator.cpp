@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int suma_cifras(int x){
-	int suma=0;
-	while(x!=0){
-		suma+=x%10;
+int suma_cifras( int x ) {
+	int suma = 0;
+	while( x!=0 ){
+		suma += x % 10;
 		x/=10;
 	}
 	return suma;
@@ -22,7 +22,7 @@ int main(){
 		
 		int value1 = 0, value2 = 0;
 		
-		for( int i=0 ; i<size_1 ; i++ ) {
+		for( int i = 0 ; i < size_1 ; i++ ) {
 			if( name1[i] >= 'a' && name1[i] <= 'z' ) {
 				value1 += name1[i] - 'a' + 1;
 			}
@@ -31,7 +31,7 @@ int main(){
 			}				
 		}
 
-		for( int i=0 ; i<size_2 ; i++ ) {
+		for( int i = 0 ; i < size_2 ; i++ ) {
 			if( name2[i] >= 'a' && name2[i] <= 'z' ) {
 				value2 += name2[i] - 'a' + 1;
 			}

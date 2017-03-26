@@ -9,10 +9,10 @@ int main(){
 		int a; 
 		int min = 100000;
 		
-		for( int i=1 ; i<=H ; i++ ) {
+		for( int i = 1 ; i <= H ; i++ ) {
 			cin>>p;
 				
-			for( int j=1 ; j<=W ; j++ ) {
+			for( int j = 1 ; j <= W ; j++ ) {
 				cin>>a;	
 				if( a >= N && p < min ) { min = p; }	
 			}

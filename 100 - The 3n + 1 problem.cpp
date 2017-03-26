@@ -14,7 +14,7 @@ int main () {
 		if(I > J) { aux=I ; I=J ; J=aux ; }
 		
 		for( I ; I<=J ; I++ ) {
-			int count = 0;
+			int count = 1;
 			n = I;
 			
 			while( n!=1 ) {
@@ -22,10 +22,7 @@ int main () {
 				else{ n=3*n+1; count++; }
 			}
 			
-			count++;
-			
-			if( count > max ) { max = count; }
-						
+			if( count > max ) { max = count; }			
 		}
 		
 		cout << aux_i <<" "<< aux_j <<" "<< max << endl;	

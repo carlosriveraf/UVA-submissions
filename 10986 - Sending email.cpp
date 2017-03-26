@@ -50,13 +50,13 @@ int main(){
 	int num_test; cin>>num_test;
 	int i=1;
 	
-	while(num_test--){
+	while( num_test-- ) {
 		int n, m, S, T;
 		cin>>n>>m>>S>>T;
 		
 		vector<Node> ady[n+5];
 		
-		while(m--){
+		while( m-- ) {
 			int x, y, w;
 			cin>>x>>y>>w;
 			ady[x].push_back( Node( y, w ) );
@@ -67,7 +67,7 @@ int main(){
 		
 		cout<<"Case #"<<i<<": ";
 		
-		if( ans>=INF ) { cout<<"unreachable\n"; }
+		if( ans >= INF ) { cout<<"unreachable\n"; }
 		else{ cout<<ans<<endl; }
 		i++;
 	}

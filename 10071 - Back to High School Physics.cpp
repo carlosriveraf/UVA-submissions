@@ -3,9 +3,9 @@ using namespace std;
 
 int main(){
 	int v; 
-	while(cin>>v){
+	while( cin>>v ) {
 	    int t; cin>>t;
-        cout<<2*v*t<<endl;
-    }
+	    cout<<2*v*t<<endl;
+	}
 	return 0;
 }

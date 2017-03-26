@@ -35,14 +35,10 @@ int main(){
 	criba();
 	
 	vector<int> f( 1000005, 0 );
-		
+	
 	for( int i = 2 ; i < 1000005 ; i++ ) {
-		if( prime[i] && prime[suma(i)] ) {
-			f[i] = f[i - 1] + 1;		
-		}
-		else{
-			f[i] = f[i - 1];
-		}
+		if( prime[i] && prime[suma(i)] ) { f[i] = f[i - 1] + 1; }
+		else{ f[i] = f[i - 1]; }
 	}
 	
 	while(T--){
